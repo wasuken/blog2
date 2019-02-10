@@ -17,5 +17,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(
 	"div",
 	null,
+	_react2.default.createElement(
+		"h2",
+		null,
+		"\u4E00\u89A7"
+	),
 	_react2.default.createElement(_BlogCardsList2.default, null)
 ), document.getElementById("app"));

@@ -55,19 +55,33 @@ var BlogCardsList = function (_React$Component) {
 
 			var cards = this.state.blogs.map(function (v, i) {
 				return _react2.default.createElement(
-					"a",
-					{ href: "/page/" + v.id },
+					_reactstrap.Card,
+					{ style: { width: '350px', height: '500px', float: "left" }, key: i },
+					_react2.default.createElement(_reactstrap.CardImg, { top: true,
+						width: "200px", height: "200px",
+						src: _this2.state.img_path }),
 					_react2.default.createElement(
-						_reactstrap.Card,
-						{ style: { width: '350px', display: "left" }, key: i },
-						_react2.default.createElement(_reactstrap.CardImg, { top: true, width: "300px", height: "300px", src: _this2.state.img_path }),
+						_reactstrap.CardBody,
+						null,
 						_react2.default.createElement(_reactstrap.CardTitle, {
 							title: v.title
 						}),
 						_react2.default.createElement(
+							_reactstrap.CardSubtitle,
+							null,
+							"\u30BF\u30B0:",
+							v.tags_string || "no contents"
+						),
+						_react2.default.createElement(
 							_reactstrap.CardText,
 							null,
-							v.body || "no contents"
+							"\u672C\u6587:",
+							(v.body || "no contents").substring(0, 20)
+						),
+						_react2.default.createElement(
+							"a",
+							{ href: "/page/" + v.id },
+							"\u7D9A\u304D\u3092\u898B\u308B"
 						)
 					)
 				);

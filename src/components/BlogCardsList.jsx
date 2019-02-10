@@ -22,15 +22,23 @@ class BlogCardsList extends React.Component{
 	}
 	render(){
 		let cards = this.state.blogs.map((v, i) => (
-			<a href={"/page/" + v.id}>
-				<Card style={{width: '350px', display: "left"}} key={i}>
-					<CardImg top width="300px" height="300px" src={this.state.img_path}	/>
+			<Card style={{width: '350px',height: '500px', float: "left"}} key={i}>
+				<CardImg top
+						 width="200px" height="200px"
+						 src={this.state.img_path}	/>
+				<CardBody>
 					<CardTitle
 					title={v.title}
 					/>
-					<CardText>{(v.body || "no contents")}</CardText>
-				</Card>
-			</a>
+					<CardSubtitle>
+						タグ:{(v.tags_string || "no contents")}
+					</CardSubtitle>
+					<CardText>
+						本文:{(v.body || "no contents").substring(0,20)}
+					</CardText>
+					<a href={"/page/" + v.id}>続きを見る</a>
+				</CardBody>
+			</Card>
 		));
 		return (
 			<div>
