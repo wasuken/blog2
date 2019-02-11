@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get '/', to: 'blogs#index'
   get '/page/:id', to: 'blogs#page'
   get '/api/v1/blogs', to: 'blogs#index_json'
+  get '/api/v1/tags', to: 'blogs#tags'
+  post '/api/v1/blog', to: 'blogs#post'
 end

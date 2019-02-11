@@ -63,20 +63,24 @@ var BlogCardsList = function (_React$Component) {
 					_react2.default.createElement(
 						_reactstrap.CardBody,
 						null,
-						_react2.default.createElement(_reactstrap.CardTitle, {
-							title: v.title
-						}),
+						_react2.default.createElement(
+							"h3",
+							null,
+							_react2.default.createElement(
+								_reactstrap.CardText,
+								null,
+								v.title
+							)
+						),
 						_react2.default.createElement(
 							_reactstrap.CardSubtitle,
 							null,
-							"\u30BF\u30B0:",
-							v.tags_string || "no contents"
+							(v.tags_string || "no contents").replace(/<.*?>/, "").substring(0, 20)
 						),
 						_react2.default.createElement(
 							_reactstrap.CardText,
 							null,
-							"\u672C\u6587:",
-							(v.body || "no contents").substring(0, 20)
+							(v.body || "no contents").replace(/<.*?>/g, "").substring(0, 20)
 						),
 						_react2.default.createElement(
 							"a",

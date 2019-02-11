@@ -14,17 +14,23 @@
  *= require_self
  */
 header{
+	margin-left: 50px;
 	width: 300px;
-	height: 200px;
+	min-height: 200px;
 	border: solid 1px #333;
 }
 .body{
+	margin-left: 50px;
 	width: 50%;
-	height: 500px;
+	min-height: 500px;
 	border: solid 1px #333 ;
 }
 .tag{
+	margin-left: 50px;
 	width: 50%;
-	height: 50px;
+	min-height: 50px;
+	border: solid 1px #333 ;
+}
+pre{
 	border: solid 1px #333 ;
 }

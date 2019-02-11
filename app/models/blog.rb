@@ -1,2 +1,13 @@
+require 'natto'
+re
 class Blog < ApplicationRecord
+  def create_tags_string_from_body(body)
+    nm = Natto::MeCab.new
+    results = []
+    nm.parse(body) do |n|
+      puts " >> #{n.surface} \t>> #{n.feature}"
+      results.push m.surface
+    end
+    results.select{|v| v.size >= 3}.join(' ')
+  end
 end

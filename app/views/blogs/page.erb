@@ -1,4 +1,4 @@
 <h2 class="header"><%= @blog.title %></h2>
 <div class="tag"><%= @blog.tags_string %></div>
-<div class="body"><%= @blog.body %></div>
+<div class="body"><%= @blog.body.html_safe %></div>
 <a href="/">Home</a>

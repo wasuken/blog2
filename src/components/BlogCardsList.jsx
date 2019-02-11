@@ -27,14 +27,16 @@ class BlogCardsList extends React.Component{
 						 width="200px" height="200px"
 						 src={this.state.img_path}	/>
 				<CardBody>
-					<CardTitle
-					title={v.title}
-					/>
+					<h3>
+						<CardText>
+							{v.title}
+						</CardText>
+					</h3>
 					<CardSubtitle>
-						タグ:{(v.tags_string || "no contents")}
+						{(v.tags_string || "no contents").replace(/<.*?>/, "").substring(0,20)}
 					</CardSubtitle>
 					<CardText>
-						本文:{(v.body || "no contents").substring(0,20)}
+						{(v.body || "no contents").replace(/<.*?>/g, "").substring(0,20)}
 					</CardText>
 					<a href={"/page/" + v.id}>続きを見る</a>
 				</CardBody>
