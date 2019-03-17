@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
   protect_from_forgery :except => [:post]
   def index
     @blog_all = Blog.order("created_at ASC")
+
     @blog_img_path = view_context.image_path('blog.jpg')
     @title = "重荷怠惰iary"
     render "blogs/index"
