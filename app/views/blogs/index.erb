@@ -1,2 +1,9 @@
 <div id="app"></div>
-<%= javascript_include_tag 'bundle.js' %>
+<h2><%= @title %></h2>
+<ul>
+  <% @blog_all.all.each do |b| %>
+  <li>
+	<a href="/page/<%= b.id%>"><%= b.title%></a>
+  </li>
+  <% end%>
+</ul>

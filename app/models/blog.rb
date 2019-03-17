@@ -1,5 +1,5 @@
 require 'natto'
-re
+
 class Blog < ApplicationRecord
   def create_tags_string_from_body(body)
     nm = Natto::MeCab.new
