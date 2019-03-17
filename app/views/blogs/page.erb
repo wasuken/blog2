@@ -1,4 +1,21 @@
 <h2 class="header"><%= @blog.title %></h2>
-<div class="tag"><%= @blog.tags_string %></div>
-<div class="body"><%= @blog.body.html_safe %></div>
+<div class="tag">
+  <% @blog.tags_string.split().each do |tag_string| %>
+  <a href="/tag/<%= tag_string%>"><%= tag_string%></a>
+  <% end %>
+</div>
+<div class="body">
+  <%= @blog.body.html_safe %>
+  <p>comment:</p>
+  <% @comments.each do |comment|%>
+  <pre>
+	<p><%= comment.username %></p>
+	<p><%= comment.comment %></p>
+  </pre>
+  <% end %>
+  <% form_for @comment,:url => {controler: "blogs", action: "post"} do |comment| %>
+  <%= comment.text_field :username %>
+  <%= comment.text_area :comment %>
+  <% end %>
+</div>
 <a href="/">Home</a>

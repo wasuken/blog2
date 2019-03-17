@@ -12,6 +12,8 @@ class BlogsController < ApplicationController
   def page
     @title = "重荷怠惰iary"
     @id = params[:id]
+    @comments = Comment.where("page_id = ?", @id).all
+    @comment = Comment.new
     @blog = Blog.where(id: @id).first
     render "blogs/page"
   end
