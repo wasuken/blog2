@@ -1,10 +1,12 @@
 class CommentsController < ApplicationController
-  def post
-    @page_id = params[:page_id]
-    @comment = params[:comment]
-    return if params[:page_id].nil? || params[:comment].nil?
-    @post = Comment.new(comment: params[:comment], page_id: params[:page_id])
-    @post.save
-    redirect_to :back
+  def create()
+    @id = 1
+    if Comment.maximum(:id).nil?
+      @id = Comment.maximum(:id)
+    end
+    Comment.create(id: @id,
+                   username: params["comment"]["username"],
+                   comment: params["comment"]["comment"],
+                   blog_id: params["comment"]["blog_id"])
   end
 end

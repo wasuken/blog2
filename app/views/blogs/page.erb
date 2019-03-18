@@ -7,15 +7,23 @@
 <div class="body">
   <%= @blog.body.html_safe %>
   <p>comment:</p>
+
   <% @comments.each do |comment|%>
-  <pre>
-	<p><%= comment.username %></p>
-	<p><%= comment.comment %></p>
-  </pre>
+  <p><%= comment.username %> > <%= comment.comment %></p>
   <% end %>
-  <% form_for @comment,:url => {controler: "blogs", action: "post"} do |comment| %>
-  <%= comment.text_field :username %>
-  <%= comment.text_area :comment %>
+
+  <%= form_for(@comment, url: { controller: :comments, action: :create }) do |comment| %>
+  <div class="field">
+	<%= comment.label(:username, "username:") %><br />
+	<%= comment.text_field(:username) %>
+  </div>
+  <div class="field">
+	<%= comment.label(:comment, "comment:") %>
+	<%= comment.text_area(:comment) %>
+  </div>
+  <%= comment.hidden_field(:blog_id, value: @id) %>
+  <%= comment.submit("send") %>
   <% end %>
+
 </div>
 <a href="/">Home</a>

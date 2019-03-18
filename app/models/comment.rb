@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  belongs_to :page
+  belongs_to :blog, optional: true
 end
