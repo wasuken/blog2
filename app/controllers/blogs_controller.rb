@@ -4,7 +4,7 @@ require 'blog.rb'
 class BlogsController < ApplicationController
   protect_from_forgery :except => [:post]
   def index
-    @blog_all = Blog.order("created_at ASC")
+    @blog_all = Blog.order("id DESC")
     @blog_img_path = view_context.image_path('blog.jpg')
     @title = "重荷怠惰iary"
     render "blogs/index"
@@ -12,13 +12,13 @@ class BlogsController < ApplicationController
   def page
     @title = "重荷怠惰iary"
     @id = params[:id]
-    @comments = Comment.where("page_id = ?", @id).all
+    @comments = Comment.where("blog_id = ?", @id).all
     @comment = Comment.new
     @blog = Blog.where(id: @id).first
     render "blogs/page"
   end
   def index_json
-    @blog_all = Blog.order("created_at ASC")
+    @blog_all = Blog.order("created_at DESC")
     @blog = { blog_default_img_path: view_context.image_path('blog.jpg'),
               blogs: @blog_all }
     render json: @blog

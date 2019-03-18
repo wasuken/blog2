@@ -1,6 +1,7 @@
 require 'natto'
 
 class Blog < ApplicationRecord
+  has_many :comments
   def create_tags_string_from_body(body)
     nm = Natto::MeCab.new
     results = []

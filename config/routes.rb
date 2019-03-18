@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   get '/page/:id', to: 'blogs#page'
   get '/tags/', to: 'blogs#tags_page'
   get '/tag/:tag', to: 'blogs#tag_page'
-  post '/page/comment', to: 'comments#post'
+  post '/comment', to: 'comments#create'
   get '/', to: 'blogs#index'
 end
