@@ -9,10 +9,7 @@
   <p>comment:</p>
 
   <% @comments.each do |comment|%>
-  <pre>
-	<%= f.label :subject %><br>
-	<p><%= comment.comment %></p>
-  </pre>
+  <p><%= comment.username %> > <%= comment.comment %></p>
   <% end %>
 
   <%= form_for(@comment, url: { controller: :comments, action: :create }) do |comment| %>
