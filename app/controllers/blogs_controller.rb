@@ -54,9 +54,14 @@ class BlogsController < ApplicationController
                .first.authenticate(params[:password])
     return unless is_pwd
     @tags_string = params[:tags_string]
-    @tags_string ||= create_tags_string_from_body(params[:body])
+    # @tags_string ||= Blog.create_tags_string_from_body(params[:body])
     @post = Blog.new(body: params[:body], title: params[:title],
                      tags_string: @tags_string)
+    if @post.tags_string.nil?
+      @post.tags_string = @post.create_tags_string_from_body(@post.body)
+    end
     @post.save
+  end
+  def create
   end
 end

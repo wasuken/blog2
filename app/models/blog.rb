@@ -7,7 +7,7 @@ class Blog < ApplicationRecord
     results = []
     nm.parse(body) do |n|
       puts " >> #{n.surface} \t>> #{n.feature}"
-      results.push m.surface
+      results.push n.surface
     end
     results.select{|v| v.size >= 3}.join(' ')
   end
