@@ -58,4 +58,6 @@ class BlogsController < ApplicationController
                      tags_string: @tags_string)
     @post.save
   end
+  def create
+  end
 end
