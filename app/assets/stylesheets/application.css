@@ -58,3 +58,102 @@ textarea{
 /* 	border-left: solid 6px #2d8fdd; */
 /* 	background: #2d8fdd; */
 /* } */
+.profile-circle {
+	display: block;
+	position: relative;
+	width: 180px;
+	height: 180px;
+	border: solid 1px #ccc; /* 枠がいらない人はこの行を消す */
+	cursor: pointer;
+	background: url(画像のurlを挿入する);
+	background-size: 101%;
+	background-position: top left;
+	border-radius: 100%;
+	margin: 10px auto;
+	-webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+	transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.profile-circle:hover {
+	background-size: 115%;
+	border:1px solid #ccc; /* 枠がいらない人はこの行を消す */
+}
+.profile-circle:hover .outside {
+	color: #222222; /* カーソルが重なった時の文字の色 */
+	-webkit-transform: rotate(-45deg) translate(0px) rotate(-315deg);
+	transform: rotate(-45deg) translate(0px) rotate(-315deg);
+	background: rgba(255, 255, 255, 0.5); /* 重なった円の色と透過度 */
+	width: 180px;
+	letter-spacing: 10px;
+	padding-left: 10px;
+	line-height: 180px;
+	height: 180px;
+	margin-top: -70px;
+	margin-left: -90px;
+	-webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1), letter-spacing 1.5s ease-out;
+	transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1), letter-spacing 1.5s ease-out;
+}
+.profile-circle .outside {
+	display: block;
+	position: absolute;
+	line-height: 100px;
+	text-align: center;
+	letter-spacing: 4px;
+	font-family: serif, "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E";
+	padding-left: 4px;
+	box-sizing: border-box;
+	font-weight: 800;
+	color: #fff; /* 文字の色 */
+	border-radius: 100%;
+	width: 100px;
+	height: 100px;
+	background: #5d5d5d; /* 外側の円の色 */
+	left: 50%;
+	top: 40%;
+	margin-top: -50px;
+	margin-left: -50px;
+	-webkit-transform: rotate(-135deg) translate(-100px) rotate(135deg);
+    transform: rotate(-135deg) translate(-100px) rotate(135deg);
+	-webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+	transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.card {
+	width: 350px;
+	height: 200px;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px #ccc;
+	float:left;
+}
+.card-img {
+	border-radius: 5px 5px 0 0;
+	max-width: 100%;
+	height: auto;
+}
+.card-content {
+	padding: 20px;
+}
+.card-title {
+	font-size: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #333;
+}
+.card-text {
+	color: #777;
+	font-size: 14px;
+	line-height: 1.5;
+}
+.card-link {
+	text-align: center;
+	border-top: 1px solid #eee;
+	padding: 20px;
+	height: 50px;
+}
+.card-link a {
+	text-decoration: none;
+	color: #0bd;
+	margin: 0 10px;
+}
+.card-link a:hover {
+	color: #0090aa;
+}

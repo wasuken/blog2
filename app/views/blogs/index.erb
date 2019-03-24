@@ -1,10 +1,21 @@
 <div id="app"></div>
-<h2><%= @title %></h2>
 <a href="/tags">tags</a>
 <ul>
+  <div class="profile-circle">
+	<a href="<%= @profile_path%>" target="blank"><div class="outside">about</div></a>
+  </div>
   <% @blog_all.all.each do |b| %>
-  <li>
-	<a href="/page/<%= b.id%>"><%= b.title%></a>
-  </li>
+  <section class="card">
+	<div class="card-content">
+      <h1 class="card-title"><%= b.title.gsub(/<.*?>/,"")[0,30] + "..." %></h1>
+      <p class="card-text"><%= b.body.gsub(/<.*?>/,"")[0,30] + "..." %></p>
+	</div>
+	<div class="card-link">
+      <a href="/page/<%= b.id%>">続きを読む</a>
+	</div>
+  </section>
+  <!-- <li> -->
+  <!-- 	<a href="/page/<%= b.id%>"><%= b.title%></a> -->
+  <!-- </li> -->
   <% end%>
 </ul>
