@@ -66,4 +66,10 @@ class BlogsController < ApplicationController
   end
   def create
   end
+  def delete
+    is_pwd = User.where("name = ?",params[:user])
+               .first.authenticate(params[:password])
+    return unless is_pwd
+    Blog.find(params[:id]).delete
+  end
 end
