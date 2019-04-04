@@ -4,7 +4,7 @@ require 'blog.rb'
 class BlogsController < ApplicationController
   protect_from_forgery :except => [:post]
   def index
-    @blog_all = Blog.order("created_at ASC")
+    @lasted_comments = Comment.order('created_at DESC').take(10)
     @blog_all = Blog.order("id DESC")
     @blog_img_path = view_context.image_path('blog.jpg')
     @profile_path = view_context.image_path('ninja.png')

@@ -4,18 +4,32 @@
   <div class="profile-circle">
 	<a href="/profile.html" target="blank"><div class="outside">about</div></a>
   </div>
-  <% @blog_all.all.each do |b| %>
-  <section class="card">
-	<div class="card-content">
-      <h1 class="card-title"><%= b.title.gsub(/<.*?>/,"")[0,30] + "..." %></h1>
-      <p class="card-text"><%= b.body.gsub(/<.*?>/,"")[0,30] + "..." %></p>
-	</div>
-	<div class="card-link">
-      <a href="/page/<%= b.id%>">続きを読む</a>
-	</div>
-  </section>
-  <!-- <li> -->
-  <!-- 	<a href="/page/<%= b.id%>"><%= b.title%></a> -->
-  <!-- </li> -->
-  <% end%>
+  <div class="comments">
+	<h2>comments</h2>
+	<% @lasted_comments.each do |c| %>
+	<a href="/page/<%= c.blog_id %>">
+	  <div class="card2">
+		<div class="box2">
+		  <div>
+			<p class="title2"><%= c.username %></p>
+			<p class="content2"><%= c.comment[0,30] + "..." %></p>
+		  </div>
+		</div>
+	  </div>
+	</a>
+	<% end %>
+  </div>
+  <div class="contents">
+	<% @blog_all.all.each do |b| %>
+	<section class="card">
+	  <div class="card-content">
+		<h1 class="card-title"><%= b.title.gsub(/<.*?>/,"")[0,30] + "..." %></h1>
+		<p class="card-text"><%= b.body.gsub(/<.*?>/,"")[0,30] + "..." %></p>
+	  </div>
+	  <div class="card-link">
+		<a href="/page/<%= b.id%>">続きを読む</a>
+	  </div>
+	</section>
+	<% end%>
+  </div>
 </ul>
