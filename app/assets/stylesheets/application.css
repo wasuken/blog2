@@ -117,7 +117,7 @@ textarea{
 	transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 .card {
-	width: 350px;
+	width: 33%;
 	height: 200px;
 	background: #fff;
 	border-radius: 5px;
@@ -156,4 +156,33 @@ textarea{
 }
 .card-link a:hover {
 	color: #0090aa;
+}
+.contents{
+	width: 80%;
+	display: block;
+	float: right;
+}
+.comments{
+	width: 20%;
+	float: left;
+	display: block;
+}
+.card2 {
+    width: 200px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px #ccc;
+}
+.box2 {
+    display: flex;
+}
+.title2 {
+    font-size: 150%;
+    margin: 10px;
+    color: #444;
+}
+.content2 {
+    padding: 10px;
+    color: #666;
 }
