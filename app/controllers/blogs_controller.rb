@@ -34,7 +34,7 @@ class BlogsController < ApplicationController
              .uniq
              .sort_by{|v| @all_tags.count(v)}
              .reverse
-             .map{|v| {size: @all_tags.count(v), string: v}}
+ n            .map{|v| {size: @all_tags.count(v), string: v}}
   end
   def tags_page
     @title = "重荷怠惰iary"
