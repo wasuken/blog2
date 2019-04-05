@@ -1,4 +1,14 @@
 <div id="app"></div>
+<<<<<<< HEAD
+<h2><%= @title %></h2>
+<a href="<%= from_root('/') %>tags">tags</a>
+<ul>
+  <% @blogs.each do |b| %>
+  <li>
+	<a href="<%= from_root('/') %>page/<%= b.id%>"><%= b.title%></a>
+  </li>
+  <% end%>
+=======
 <a href="/tags">tags</a>
 <ul>
   <div class="contents">
@@ -14,5 +24,6 @@
 	</section>
 	<% end%>
   </div>
+>>>>>>> 08806b4767212ddaa05a5c184708fd242239689f
 </ul>
-<a href="/">Home</a>
+<a href="<%= from_root('/') %>">Home</a>
