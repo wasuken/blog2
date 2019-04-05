@@ -48,7 +48,7 @@ class BlogsController < ApplicationController
   end
   def tag_page
     @title = "重荷怠惰iary"
-    @blogs = Blog.where("tags_string like ?", "%#{params[:tag]}%")
+    @blog_all = Blog.where("tags_string like ?", "%#{params[:tag]}%")
     render "blogs/tag"
   end
   def post
