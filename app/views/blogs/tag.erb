@@ -1,11 +1,11 @@
 <div id="app"></div>
 <h2><%= @title %></h2>
-<a href="/tags">tags</a>
+<a href="<%= from_root('/') %>tags">tags</a>
 <ul>
   <% @blogs.each do |b| %>
   <li>
-	<a href="/page/<%= b.id%>"><%= b.title%></a>
+	<a href="<%= from_root('/') %>page/<%= b.id%>"><%= b.title%></a>
   </li>
   <% end%>
 </ul>
-<a href="/">Home</a>
+<a href="<%= from_root('/') %>">Home</a>

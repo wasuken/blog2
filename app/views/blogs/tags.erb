@@ -1,4 +1,4 @@
 <% @tags.each do |tag| %>
-<a href="/tag/<%= tag %>"><%= tag %></a>
+<a href="<%= from_root('/') %>tag/<%= tag %>"><%= tag %></a>
 <% end %>
-<a href="/">Home</a>
+<a href="<%= from_root('/') %>">Home</a>

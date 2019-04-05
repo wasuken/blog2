@@ -1,6 +1,6 @@
 <div class="tag">
   <% @blog.tags_string.split().each do |tag_string| %>
-  <a href="/tag/<%= tag_string%>"><%= tag_string%></a>
+  <a href="<%= from_root('/') %>tag/<%= tag_string%>"><%= tag_string%></a>
   <% end %>
 </div>
 <div class="body">
@@ -27,4 +27,4 @@
   <% end %>
 
 </div>
-<a href="/">Home</a>
+<a href="<%= from_root('/') %>">Home</a>

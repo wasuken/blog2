@@ -1,13 +1,13 @@
 <div id="app"></div>
-<a href="/tags">tags</a>
+<a href="<%= from_root('/')%>tags">tags</a>
 <ul>
   <div class="profile-circle">
-	<a href="/profile.html" target="blank"><div class="outside">about</div></a>
+	<a href="<%= from_root('/profile.html') %>" target="blank"><div class="outside">about</div></a>
   </div>
   <div class="comments">
 	<h2>comments</h2>
 	<% @lasted_comments.each do |c| %>
-	<a href="/page/<%= c.blog_id %>">
+	<a href="<%= from_root('/page/' + c.blog_id.to_s) %>">
 	  <div class="card2">
 		<div class="box2">
 		  <div>
@@ -27,7 +27,7 @@
 		<p class="card-text"><%= b.body.gsub(/<.*?>/,"")[0,30] + "..." %></p>
 	  </div>
 	  <div class="card-link">
-		<a href="/page/<%= b.id%>">続きを読む</a>
+		<a href="<%= from_root('/page/' + b.id.to_s)%>">続きを読む</a>
 	  </div>
 	</section>
 	<% end%>
