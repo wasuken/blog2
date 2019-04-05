@@ -5,8 +5,8 @@
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum; this matches the default thread size of Active Record.
 #
-tmp_path = "/var/www/blog2/tmp"
-bind "unix://#{tmp_path}/sockets/puma.sock"
+# tmp_path = "/var/www/blog2/tmp"
+# bind "unix://#{tmp_path}/sockets/puma.sock"
 
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 threads threads_count, threads_count
@@ -36,4 +36,4 @@ environment ENV.fetch("RAILS_ENV") { "production" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
-daemonize
+# daemonize
