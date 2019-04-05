@@ -1,4 +1,5 @@
 <div id="app"></div>
+<<<<<<< HEAD
 <h2><%= @title %></h2>
 <a href="<%= from_root('/') %>tags">tags</a>
 <ul>
@@ -7,5 +8,22 @@
 	<a href="<%= from_root('/') %>page/<%= b.id%>"><%= b.title%></a>
   </li>
   <% end%>
+=======
+<a href="/tags">tags</a>
+<ul>
+  <div class="contents">
+	<% @blog_all.all.each do |b| %>
+	<section class="card">
+	  <div class="card-content">
+		<h1 class="card-title"><%= b.title.gsub(/<.*?>/,"")[0,30] + "..." %></h1>
+		<p class="card-text"><%= b.body.gsub(/<.*?>/,"")[0,30] + "..." %></p>
+	  </div>
+	  <div class="card-link">
+		<a href="/page/<%= b.id%>">続きを読む</a>
+	  </div>
+	</section>
+	<% end%>
+  </div>
+>>>>>>> 08806b4767212ddaa05a5c184708fd242239689f
 </ul>
 <a href="<%= from_root('/') %>">Home</a>
