@@ -37,4 +37,4 @@ environment ENV.fetch("RAILS_RELATIVE_URL_ROOT") { "/blog" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
-# daemonize
+daemonize
